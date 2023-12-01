@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import MacDoc from "./pages/MacDoc";
 
 const App = () => {
   return (
-    <div>App</div>
-  )
-}
+    <div>
+      <Routes>
+        <Route path="/" element={<MacDoc />} />
+      </Routes>
+    </div>
+  );
+};
 
-export default App
+export default App;
