@@ -4,7 +4,7 @@ import AnimateOne from "./pages/AnimateOne";
 
 const App = () => {
   return (
-    <div>
+    <div className="App">
       <Routes>
         <Route path="/" element={<AnimateOne />} />
       </Routes>
