@@ -24,9 +24,10 @@ const Hero = () => {
       <div className="textBox w-full h-full flex justify-center ">
         <motion.div
           style={{ scale }}
-          className="w-1/2 h-full flex flex-col justify-center items-center"
+          className="w-1/2 h-full flex flex-col items-center"
         >
           <h2 className="text-dark_text_1 text-[30px]">Scroll Animations</h2>
+          <h2 className="text-dark_text_1 text-[30px]">With Framer</h2>
           <p className="text[14px] text-[#4e4b4b]">Developed by @ahmet</p>
           <h1 className="text-[60px] text-white">Scrolled</h1>
           <h1 className="text-[60px] text-white -mt-4">In View</h1>

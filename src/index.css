@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@layer base {
+  :root {
+    --color-primary: #dcff50;
+    --color-secondary: #7b61ff;
+    --color-heading: #f5f5f7;
+    --color-text: rgba(255, 255, 255, 0.6);
+    --color-background: #090909;
+  }
+}
+
+@layer utilities {
+  /* This two helpers apply a -50% to the translate x/y, and add
+   * a --y/--x css variable to it. This util is only here to make writing this class
+   * a bit easier to read in the HTML :)   */
+  .translate-y-centered-offset {
+    @apply translate-y-[calc(-50%_+_var(--y,_0px))];
+  }
+  .translate-x-centered-offset {
+    @apply translate-x-[calc(-50%_+_var(--x,_0px))];
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -37,7 +58,7 @@ body::-webkit-scrollbar-thumb {
   background: inherit;
   width: 100%;
   margin: 0 auto;
-  height: 600px;
+
   left: 50%;
   transform: translateX(-50%);
 }

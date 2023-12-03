@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import imgOne from "../assets/img1.jpg";
+import imgOne from "../assets/main-screen.png";
 import imgMain from "../assets/main-screen.png";
 import { useScroll, useTransform, motion } from "framer-motion";
 
@@ -9,7 +9,7 @@ const SectionOne = () => {
 
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start end", "end end"],
+    offset: ["start end", "end start"],
   });
 
   const { scrollYProgress: scrollYProgressIncludingOverlap } = useScroll({
@@ -18,25 +18,21 @@ const SectionOne = () => {
     offset: ["start end", "end start"],
   });
 
-  const scale = useTransform(
-    scrollYProgress,
-    [0.1, 0.2, 0.4, 0.6],
-    [1, 1.2, 1.4, 1.5]
-  );
+  const scale = useTransform(scrollYProgress, [0.1, 0.4], [1, 1.5]);
   const opacity = useTransform(scrollYProgress, [0.9, 1], [1, 0]);
   const x = useTransform(
     scrollYProgress,
-    [0.1, 0.25, 0.7],
-    ["0%", "-55%", "0%"]
+    [0.1, 0.25, 0.7, 1],
+    ["0%", "-35%", "-60%", "0%"]
   );
 
   return (
     <section className="-mt-[30vh] ">
-      <div ref={targetRef} className="w-full h-[300vh]">
+      <div ref={targetRef} className="w-full h-[300vh] ">
         <div className="sticky top-[10vh]">
           <div className="flex justify-center">
             <motion.div style={{ scale, x, opacity }} className="origin-top">
-              <img src={imgOne} alt="" />
+              <img src={imgOne} alt="" className="w-full h-full object-cover" />
             </motion.div>
           </div>
         </div>
